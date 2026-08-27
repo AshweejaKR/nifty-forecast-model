@@ -1,0 +1,7 @@
+experiment: swing_daily
+symbol: NIFTY50
+interval: 1d
+lookback_bars: 120
+horizon_bars: 1
+target: direction
+model: xgboost

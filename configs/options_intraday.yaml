@@ -1,0 +1,7 @@
+experiment: options_intraday_5m
+symbol: NIFTY50
+interval: 5m
+lookback_bars: 75
+horizon_bars: 3
+target: direction
+model: xgboost

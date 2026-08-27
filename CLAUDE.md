@@ -1,90 +1,40 @@
-# CLAUDE.md
+# Project Instructions
 
-## Project Goal
+## Goal
 
-Help build a Tiny GPT from scratch and learn AI Agent Engineering.
+Build small NIFTY 50 forecasting models for learning and careful evaluation.
 
----
+## Rules
 
-## ⚠️ STRICT RULES
+- Read `PLAN.md` before changing code.
+- Complete one phase at a time.
+- Keep code simple and readable.
+- Prefer functions over unnecessary classes.
+- Avoid factory patterns and duplicate layers.
+- Keep files below 300 lines when practical.
+- Add only small tests for core behavior.
+- Never fake data, results, or execution output.
+- Never use future information during preprocessing or evaluation.
+- Never claim a model is profitable from training metrics alone.
+- Update documentation and phase status with each completed phase.
+- Commit after each approved phase.
 
-- Do NOT over-engineer
-- Do NOT create unnecessary abstractions
-- Do NOT use factory patterns unless clearly needed
-- Do NOT create multiple layers for the same logic
-- Do NOT split small logic into many files
+## Fixed Model Scope
 
-- Keep code simple and readable
-- Prefer files under 150-300 lines
-- Split only when readability improves
-- Prefer functions over classes unless necessary
-- One responsibility per module
-
----
-
-## ⚙️ EXECUTION CONSTRAINTS
-
-- Do NOT create extensive test suites unless explicitly asked
-- Create minimal tests only when needed to validate core functionality
-- Do NOT simulate running code or fake outputs
-- Do NOT assume external API responses
-- Do NOT generate unnecessary files
-- Keep responses efficient and focused
-
----
-
-## 🧠 RESPONSE STYLE
-
-- Be concise and direct
-- Avoid unnecessary explanations
-- Prefer code over text
-- No filler or generic statements
-- Output result, then stop
-
----
-
-## ❓ CLARIFICATION RULE
-
-- If task is unclear, ask questions before coding
-- If task is clear, proceed immediately
-- Do not ask obvious or redundant questions
-
----
-
-## 🎯 LEARNING FIRST
-
-- Prefer educational implementations over clever implementations
-- Explain important AI/LLM concepts when introducing them
-- Optimize for understanding first, performance second
-- Build from scratch before using frameworks when learning
-
----
-
-## Development Workflow
-
-1. Read PLAN.md
-2. Complete one task at a time
-3. Update documentation when needed
-4. Commit after each phase
-
----
+- No technical indicators.
+- Raw spot, futures, and option data only.
+- Returns and training-only scaling are preprocessing, not indicators.
+- Swing and options-intraday share one data and model framework.
+- XGBoost is the baseline before neural models.
+- LSTM comes before PatchTST.
 
 ## Folder Ownership
 
-data/
-- Dataset processing
-
-tokenizer/
-- Tokenizer implementation
-
-model/
-- Transformer and GPT model
-
-training/
-- Training loop
-
-inference/
-- Text generation
-
-tests/
-- Minimal validation tests only when necessary
+- `configs/`: experiment settings
+- `data/`: local raw and processed datasets
+- `docs/`: data and model documentation
+- `src/nifty_forecast/data/`: validation, alignment, and windows
+- `src/nifty_forecast/models/`: model implementations
+- `src/nifty_forecast/training/`: training and checkpoints
+- `src/nifty_forecast/evaluation/`: metrics and walk-forward testing
+- `tests/`: minimal validation tests
